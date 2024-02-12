@@ -1,5 +1,7 @@
 package kiralynok;
 
+import java.util.Random;
+
 public class Tabla {
 
     private char[][] T;
@@ -21,6 +23,20 @@ public class Tabla {
                 System.out.print(T[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    public void Elhelyez(int N) {
+        Random rnd = new Random();
+        int db = 0;
+
+        while (db < N) {
+            int sor = rnd.nextInt(8);
+            int oszlop = rnd.nextInt(8);
+            if (T[sor][oszlop] != 'K') {
+                T[sor][oszlop] = 'K';
+                db++;
+            }
         }
     }
 }
