@@ -12,11 +12,11 @@ public class Kiralynok {
         System.out.println("Oszlopok: " + tabla.uresOszlopokSzama());
         System.out.println("Sorok: " + tabla.uresSorokSzama());
         
-        String fajlnev = "tablak64.txt";
-        for (int i = 1; i <= 64; i++) {
-            tabla.Elhelyez(i);
-            tabla.fajlbaIr(fajlnev);
-        }
+//        String fajlnev = "tablak64.txt";
+//        for (int i = 1; i <= 64; i++) {
+//            tabla.Elhelyez(i);
+//            tabla.fajlbaIr(fajlnev);
+//        }
     }
 
 }

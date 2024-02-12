@@ -80,7 +80,7 @@ public class Tabla {
 
     public void fajlbaIr(String fajlnev) throws IOException {
         FileWriter writer = new FileWriter(fajlnev);
-            for (int sor = 0; sor < T.length; sor++) {
+        for (int sor = 0; sor < T.length; sor++) {
             for (int oszlop = 0; oszlop < T[sor].length; oszlop++) {
                 writer.write(T[sor][oszlop] + " ");
             }
@@ -88,4 +88,15 @@ public class Tabla {
         }
     }
 
+    public char[][] getT() {
+        return T;
+    }
+
+    public void Reset() {
+        for (int i = 0; i < T.length; i++) {
+            for (int j = 0; j < T[i].length; j++) {
+                T[i][j] = uresCella;
+            }
+        }
+    }
 }
