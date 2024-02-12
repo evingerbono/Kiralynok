@@ -55,4 +55,24 @@ public class Tabla {
         }
         return i >= 8;
     }
+    
+    public int uresOszlopokSzama(){
+        int oszlopDb = 0;
+        for (int i = 0; i < 8; i++) {
+            if(uresOszlop(i)){
+                oszlopDb++;
+            }
+        }
+        return oszlopDb;
+    }
+    
+    public int uresSorokSzama(){
+        int sorDb = 0;
+        for (int i = 0; i < 8; i++) {
+            if(uresSor(i)){
+                sorDb++;
+            }
+        }
+        return sorDb;
+    }
 }
