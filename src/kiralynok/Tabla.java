@@ -1,5 +1,7 @@
 package kiralynok;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class Tabla {
@@ -39,40 +41,51 @@ public class Tabla {
             }
         }
     }
-    
-    public boolean uresOszlop(int oszlop){
+
+    public boolean uresOszlop(int oszlop) {
         int i = 0;
-        while(i < 8 && !(T[i][oszlop] == 'K')){
+        while (i < 8 && !(T[i][oszlop] == 'K')) {
             i++;
         }
         return i >= 8;
     }
-    
-    public boolean uresSor(int sor){
+
+    public boolean uresSor(int sor) {
         int i = 0;
-        while(i < 8 && !(T[sor][i] == 'K')){
+        while (i < 8 && !(T[sor][i] == 'K')) {
             i++;
         }
         return i >= 8;
     }
-    
-    public int uresOszlopokSzama(){
+
+    public int uresOszlopokSzama() {
         int oszlopDb = 0;
         for (int i = 0; i < 8; i++) {
-            if(uresOszlop(i)){
+            if (uresOszlop(i)) {
                 oszlopDb++;
             }
         }
         return oszlopDb;
     }
-    
-    public int uresSorokSzama(){
+
+    public int uresSorokSzama() {
         int sorDb = 0;
         for (int i = 0; i < 8; i++) {
-            if(uresSor(i)){
+            if (uresSor(i)) {
                 sorDb++;
             }
         }
         return sorDb;
     }
+
+    public void fajlbaIr(String fajlnev) throws IOException {
+        FileWriter writer = new FileWriter(fajlnev);
+            for (int sor = 0; sor < T.length; sor++) {
+            for (int oszlop = 0; oszlop < T[sor].length; oszlop++) {
+                writer.write(T[sor][oszlop] + " ");
+            }
+            writer.write("\n");
+        }
+    }
+
 }
